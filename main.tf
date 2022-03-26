@@ -12,6 +12,11 @@ terraform {
 provider   "aws"{
     region= "us-east-1"
 }
+
+resource "aws_s3_bucket" "bucket" {
+    bucket="vcs-${uuid()}"
+  
+}
 module "ec2" {
     source  = "app.terraform.io/sklearnit/ec2/aws"
     version = "1.0.1"
