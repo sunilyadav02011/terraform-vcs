@@ -14,7 +14,7 @@ provider   "aws"{
 }
 
 resource "aws_s3_bucket" "bucket" {
-    bucket="vcs-${uuid()}"
+    bucket=var.bucket_name
   
 }
 module "ec2" {
